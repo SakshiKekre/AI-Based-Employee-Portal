@@ -14,12 +14,12 @@ import NotFound404 from "../NotFound404.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faUsers,
- faUser,
-faFileAlt,
-faUniversity,
+faUserTie,
 faBriefcase,
-faMale,
+faAddressCard,
+faGraduationCap,
+faUserFriends,
+faCalendarAlt
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -64,7 +64,7 @@ class DashboardHR extends Component {
             <div id="sidebar">
               <div id="sidebar-top-content" />
               <div id="main-title" className="main-title-employee">
-                <FontAwesomeIcon icon={faUsers} className="sidebar-icon" />
+                <FontAwesomeIcon icon={faUserTie} className="sidebar-icon" />
                 Employee
               </div>
               <ul className="navbar-ul">
@@ -77,7 +77,7 @@ class DashboardHR extends Component {
                     }
                   >
                     <FontAwesomeIcon
-                      icon={faUser}
+                      icon={faAddressCard}
                       className="sidebar-icon"
                     />
                     Personal Information
@@ -90,7 +90,7 @@ class DashboardHR extends Component {
                     }
                   >
                     <FontAwesomeIcon
-                      icon={faUniversity}
+                      icon={faGraduationCap}
                       className="sidebar-icon"
                     />
                     Education
@@ -101,7 +101,7 @@ class DashboardHR extends Component {
                       "/employee/" + this.props.data["_id"] + "/family-info"
                     }>
                     <FontAwesomeIcon
-                      icon={faMale}
+                      icon={faUserFriends}
                       className="sidebar-icon"
                     />
                     Dependents
@@ -123,7 +123,7 @@ class DashboardHR extends Component {
                       "/employee/" + this.props.data["_id"] + "/leave-application-emp"
                     }>
                     <FontAwesomeIcon
-                      icon={faFileAlt}
+                      icon={faCalendarAlt}
                       className="sidebar-icon"
                     />
                     Leave Application

@@ -31,6 +31,9 @@ faCity,
 faGlobeAmericas,
 faPlaceOfWorship,
 faArchway,
+faDollarSign,
+faBriefcase,
+faSitemap
 } from "@fortawesome/free-solid-svg-icons";
 
 function RoleHRF() {
@@ -115,13 +118,13 @@ class DashboardHR extends Component {
               <ul className="navbar-ul">
                 <li>
                   <Link to="/hr/employee">
-                    <FontAwesomeIcon icon={faUser} className="sidebar-icon" /> 
-                    User 
+                    <FontAwesomeIcon icon={faUsers} className="sidebar-icon" /> 
+                    Users 
                   </Link> 
                 </li>
                 <li>
                   <Link to="/hr/salary">
-                    <FontAwesomeIcon icon={faRupeeSign} className="sidebar-icon" /> 
+                    <FontAwesomeIcon icon={faDollarSign} className="sidebar-icon" /> 
                     Salary 
                   </Link> 
                 </li>
@@ -133,19 +136,19 @@ class DashboardHR extends Component {
                 </li>
                 <li>
                   <Link to="/hr/company">
-                    <FontAwesomeIcon icon={faCity} className="sidebar-icon" /> 
+                    <FontAwesomeIcon icon={faBriefcase} className="sidebar-icon" /> 
                     company 
                   </Link> 
                 </li>
                 <li>
                   <Link to="/hr/role">
-                    <FontAwesomeIcon icon={faUsers} className="sidebar-icon" /> 
+                    <FontAwesomeIcon icon={faUser} className="sidebar-icon" /> 
                     Role 
                   </Link> 
                 </li>
                 <li>
                   <Link to="/hr/position">
-                    <FontAwesomeIcon icon={faChair} className="sidebar-icon" /> 
+                    <FontAwesomeIcon icon={faSitemap} className="sidebar-icon" /> 
                     Position 
                   </Link> 
                 </li>

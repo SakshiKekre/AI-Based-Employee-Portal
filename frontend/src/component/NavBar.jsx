@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./NavBar.css";
 import { Navbar, Nav } from "react-bootstrap";
-import Logo from "../img/img.png";
+import Logo from "../img/SJSU_Seal.png";
 import Switch from "react-switch";
 
 class NavBar extends Component {
@@ -24,7 +24,7 @@ class NavBar extends Component {
             <span id="toggle-switch"><Switch 
     checked={this.props.checked}
     onChange={this.props.handleChange}
-    onColor="#404e67"
+    onColor="#000000"
     onHandleColor="#ffffff"
     handleDiameter={10}
     uncheckedIcon={false}
