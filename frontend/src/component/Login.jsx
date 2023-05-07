@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
-import Logo from "../img/img.png";
+import Logo from "../img/SJSU_Seal.png";
+import LoginBG from "../img/login_bg.jpg";
 import { css } from "@emotion/core";
 // First way to import
 import { ScaleLoader } from "react-spinners";
@@ -14,14 +15,14 @@ class Login extends Component {
   render() {
     // let value=(this.props.pass) ? undefined : "";
     return (
-      <div>
-        <div className="container">
-          <div id="main-outer-div">
+      <div >
+        <div class="container"  style={{ backgroundImage: `url(${LoginBG})`}}>
+          <div id="main-outer-div" >
             <div id="logo-div">
                
               <img id="logo-img" src={Logo} alt="" />
             </div>
-            <div id="title-div">
+            <div id="title-div" >
                
               <h4 className="title">Sign in</h4>
             </div>

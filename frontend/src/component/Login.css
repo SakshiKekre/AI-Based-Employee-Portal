@@ -1,25 +1,33 @@
 body {
-  background-color: #2b447b;
+  background-color: #ffffff77;
 }
 #root {
   height: auto;
+
 }
 
 #main-outer-div {
   position: relative;
-  background-color: #fff;
-  width: 80%;
-  max-width: 400px;
+  background-color: rgba(254, 254, 254, 0);
+  height: 100%;
+  width: 100%;
+  max-width: 700px;
   margin: auto;
   margin-top: 7%;
-  padding: 30px;
-  border-radius: 10px;
+  /* padding: 30px; */
+  /* border-radius: 10px; */
+  opacity: 0.8;
+
 }
 
 .container {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 #logo-img {
+  
   width: 100%;
   margin: 10% auto 10%;
 }
@@ -42,7 +50,7 @@ body {
   margin: 10px 0 10px;
   padding: 15px;
   border: 1px;
-  background-color: #eef3ff;
+  background-color: #fff7ee;
 }
 
 .login-form-input:focus {
@@ -54,7 +62,8 @@ body {
   margin: 0 auto;
 }
 .login-form-input[type="submit"] {
-  background-color: #395faf;
+  background-color: #000000;
+  color: rgb(251, 251, 251);
   border-width: 0px;
   margin-top: 15px;
   padding: 0px;
