@@ -11,11 +11,6 @@ import Education from "./employee/Education.jsx";
 import FamilyInfo from "./employee/FamilyInfo.jsx";
 import WorkExperience from "./employee/WorkExperience.jsx";
 
-
-
-
-
-
 class Employee extends Component {
   state = {
     table: true,
@@ -27,20 +22,8 @@ class Employee extends Component {
     EmpInfoBool: false,
 
   };
-  // redirectF=()=>{
-  // //  if(this.state.EmpInfo==true){
-  //   this.setState({EmpInfo:false})
-  //   console.log("rrrrrrrrrrrrrrrrrrrrrrrrrrrr");
-  //   return <Redirect to="hr/employee/info" />
-  // //  }
-  // }
 
   render() {
-    // if (this.state.EmpInfo) {
-    //   this.setState({EmpInfo:false});
-    //   return <Redirect to="hr/employee/info" />
-    // }
-
     return (
       <Router>
         <Route
@@ -59,8 +42,6 @@ class Employee extends Component {
                     onGenderChange={this.handleEditFormGenderChange}
                   />
                 ) : (
-
-
                     !this.state.EmpInfoBool ? <EmployeeTable
                       onAddEmployee={this.handleAddEmployee}
                       onEditEmployee={this.handleEditEmployee}

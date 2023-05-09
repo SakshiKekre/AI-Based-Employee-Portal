@@ -35,7 +35,7 @@ class AdminEmployeeTable extends Component {
         headerName: "Employee Code",
         field: "EmployeeCode",
         sortable: true,
-        width: 140,
+        width: 200,
         // filter: true ,
       },
       {
@@ -43,21 +43,21 @@ class AdminEmployeeTable extends Component {
         field: "Email",
         sortable: true,
         // filter: true ,
-        width: 150,
+        width: 200,
       },
       {
         headerName: "Account Access",
         field: "Account",
         sortable: true,
 
-        // width: 70,
+        width: 200,
         // filter: true ,
       },
       {
         headerName: "First Name",
         field: "FirstName",
         sortable: true,
-        width: 110,
+        width: 200,
 
         // filter: true ,
       },
@@ -65,7 +65,7 @@ class AdminEmployeeTable extends Component {
         headerName: "Middle Name",
         field: "MiddleName",
         sortable: true,
-        width: 130,
+        width: 200,
 
         // filter: true ,
       },
@@ -73,7 +73,7 @@ class AdminEmployeeTable extends Component {
         headerName: "Last Name",
         field: "LastName",
         sortable: true,
-        width: 110,
+        width: 200,
 
         // filter: true ,
       },
@@ -83,13 +83,14 @@ class AdminEmployeeTable extends Component {
         sortable: true,
         filter: true,
         type: ["dateColumn"],
-        filter: "agDateColumnFilter"
+        filter: "agDateColumnFilter",
+        width: 200
       },
       {
         headerName: "ContactNo",
         field: "ContactNo",
         sortable: true,
-        width: 117,
+        width: 200,
         // filter: true ,
       },
 
@@ -98,15 +99,16 @@ class AdminEmployeeTable extends Component {
         field: "RoleName",
         sortable: true,
 
-        width: 70,
+        width: 200,
         // filter: true ,
       },
+
       {
         headerName: "Department Name",
         field: "DepartmentName",
         sortable: true
         ,
-        width: 120,
+        width: 200,
         // filter: true ,
       },
 
@@ -117,10 +119,49 @@ class AdminEmployeeTable extends Component {
         field: "DateOfJoining",
         sortable: true
         ,
-        width: 120,
+        width: 200,
         // filter: true ,
 
-      }
+      },
+      {
+        headerName: "",
+        field: "info",
+        filter: false,
+        width: 30,
+        // cellRenderer:this.ageCellRendererFunc,
+        // cellRendererFramework: function(params) {
+        //   return <button OnClick={console.log("pa",params)}>Test</button>;
+        // },
+        cellRendererFramework: this.renderInfoButton.bind(this),
+
+
+      },
+      {
+        headerName: "",
+        field: "edit",
+        filter: false,
+        width: 30,
+        // cellRenderer:this.ageCellRendererFunc,
+        // cellRendererFramework: function(params) {
+        //   return <button OnClick={console.log("pa",params)}>Test</button>;
+        // },
+        cellRendererFramework: this.renderEditButton.bind(this),
+
+
+      },
+      {
+        headerName: "",
+        field: "delete",
+        filter: false,
+        width: 30,
+        // cellRenderer:this.ageCellRendererFunc,
+        // cellRendererFramework: function(params) {
+        //   return <button OnClick={console.log("pa",params)}>Test</button>;
+        // },
+        cellRendererFramework: this.renderButton.bind(this),
+
+
+      },
 
     ],
     rowData: [],
@@ -146,12 +187,11 @@ class AdminEmployeeTable extends Component {
       })
       .then(response => {
         this.employeeObj = response.data;
-        console.log("employee response : ", response.data);
+        console.log("response", response.data);
         this.setState({ employeeData: response.data });
         this.setState({ loading: false });
         this.rowDataT = [];
         this.employeeObj.map(data => {
-          console.log("role : ",data["role"][0]);
           let temp = {
             data,
             Email: data["Email"],

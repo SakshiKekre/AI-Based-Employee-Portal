@@ -1,3 +1,7 @@
+.form-group-spacer {
+  margin-bottom: 16px;
+}
+
 #form-submit-button button{
     background-color: #0069d9;
     border-color: #0069d9;

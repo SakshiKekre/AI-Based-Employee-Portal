@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import "./EmployeeFormEdit.css";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
 class SalaryForm extends Component {
@@ -38,7 +38,7 @@ class SalaryForm extends Component {
         <div id="role-form-outer-div">
           <Form id="form" onSubmit={this.props.onSalarySubmit}>
 
-          <Form.Group as={Row}>
+          <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Select Employee
               </Form.Label>
@@ -56,7 +56,7 @@ class SalaryForm extends Component {
             </Form.Group>
 
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Basic Salary
               </Form.Label>
@@ -69,7 +69,7 @@ class SalaryForm extends Component {
               </Col>
             </Form.Group>
      
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Bank Name
               </Form.Label>
@@ -82,7 +82,7 @@ class SalaryForm extends Component {
               </Col>
             </Form.Group>
      
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Account No
               </Form.Label>
@@ -95,7 +95,7 @@ class SalaryForm extends Component {
               </Col>
             </Form.Group>
      
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Re-Enter Account No
               </Form.Label>
@@ -108,7 +108,7 @@ class SalaryForm extends Component {
               </Col>
             </Form.Group>
      
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Account Holder Name
               </Form.Label>
@@ -121,7 +121,7 @@ class SalaryForm extends Component {
               </Col>
             </Form.Group>
      
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               IFSC Code
               </Form.Label>
@@ -135,7 +135,7 @@ class SalaryForm extends Component {
             </Form.Group>
 
             
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Tax Deduction
               </Form.Label>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import axios from "axios";
+import "./EmployeeFormEdit.css";
 
 class RoleForm extends Component {
   state = {
@@ -46,7 +47,7 @@ class RoleForm extends Component {
               )
             }
           >
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Company
               </Form.Label>
@@ -68,7 +69,7 @@ class RoleForm extends Component {
                 </Form.Control>
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Role
               </Form.Label>

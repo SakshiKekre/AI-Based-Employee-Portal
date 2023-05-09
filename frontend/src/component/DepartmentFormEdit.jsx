@@ -52,7 +52,7 @@ class DepartmentForm extends Component {
               this.props.onDepartmentEditUpdate(this.props.editData, e)
             }
           >
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Company
               </Form.Label>
@@ -75,7 +75,7 @@ class DepartmentForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Department
               </Form.Label>

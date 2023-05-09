@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import "./EmployeeFormEdit.css";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
 class EmployeeForm extends Component {
@@ -8,7 +8,6 @@ class EmployeeForm extends Component {
     roleData: [],
     positionData: [],
     departmentData: [],
-
   }
 
   loadRoleInfo = () => {
@@ -65,7 +64,7 @@ class EmployeeForm extends Component {
         <h2 id="role-form-title">Add Employee Details</h2>
         <div id="role-form-outer-div">
           <Form id="form" onSubmit={this.props.onEmployeeSubmit}>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Email
               </Form.Label>
@@ -78,7 +77,7 @@ class EmployeeForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Password
               </Form.Label>
@@ -91,20 +90,19 @@ class EmployeeForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row} >
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Account access
     </Form.Label>
               <Col sm={10} className="form-input">
                 <Form.Control as="select" required>
-                  <option value="1">Admin</option>
-                  <option value="2">HR</option>
-                  <option value="3">Employee</option>
+                  <option value="1">HR</option>
+                  <option value="2">Employee</option>
                 </Form.Control>
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Role
               </Form.Label>
@@ -122,7 +120,7 @@ class EmployeeForm extends Component {
                 </Form.Control>
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label as="legend" column sm={2}>
                 Gender
       </Form.Label>
@@ -147,7 +145,7 @@ class EmployeeForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 First Name
               </Form.Label>
@@ -159,7 +157,7 @@ class EmployeeForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Middle Name
               </Form.Label>
@@ -170,8 +168,8 @@ class EmployeeForm extends Component {
                   required
                 />
               </Col>
-            </Form.Group>
-            <Form.Group as={Row}>
+            </Form.Group >
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Last Name
               </Form.Label>
@@ -184,7 +182,7 @@ class EmployeeForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 DOB
               </Form.Label>
@@ -196,7 +194,7 @@ class EmployeeForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Contact No
               </Form.Label>
@@ -209,7 +207,7 @@ class EmployeeForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Employee Code
               </Form.Label>
@@ -223,7 +221,7 @@ class EmployeeForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Department
               </Form.Label>
@@ -243,7 +241,7 @@ class EmployeeForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Position
               </Form.Label>
@@ -258,7 +256,7 @@ class EmployeeForm extends Component {
                 </Form.Control>
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Date Of Joining
               </Form.Label>
@@ -270,7 +268,7 @@ class EmployeeForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Terminate Date
               </Form.Label>

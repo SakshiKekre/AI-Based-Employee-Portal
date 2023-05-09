@@ -1338,6 +1338,7 @@ app.delete("/api/state/:id", verifyHR, (req, res) => {
   console.log(req.params.id);
 });
 
+
 /////////////city
 
 app.get("/api/city", verifyHR, (req, res) => {

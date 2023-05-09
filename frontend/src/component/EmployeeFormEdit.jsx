@@ -21,7 +21,7 @@ class EmployeeFormEdit extends Component {
     EmployeeCodeData: this.props.editData["EmployeeCode"],
 
     DateOfJoiningData: this.props.editData["DateOfJoining"].slice(0, 10),
-    TerminateDateData: this.props.editData["TerminateDate"].slice(0, 10)
+    TerminateDateData: this.props.editData["DateOfJoining"].slice(0, 10)
 
     // value={this.state.EmployeeTitleData}
     // onChange={value => this.onEmployeeTitleDataChange(value)}
@@ -127,7 +127,7 @@ class EmployeeFormEdit extends Component {
               this.props.onEmployeeEditUpdate(this.props.editData, e)
             }
           >
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Email
               </Form.Label>
@@ -143,22 +143,8 @@ class EmployeeFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            {/* <Form.Group as={Row}>
-              <Form.Label column sm={2}>
-                Password
-              </Form.Label>
-              <Col sm={10} className="form-input">
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  required
-                  value={this.state.PasswordData}
-                  onChange={value => this.onPasswordDataChange(value)}
-                />
-              </Col>
-            </Form.Group> */}
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Account access
               </Form.Label>
@@ -186,7 +172,7 @@ class EmployeeFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Role
               </Form.Label>
@@ -209,7 +195,7 @@ class EmployeeFormEdit extends Component {
                 </Form.Control>
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label as="legend" column sm={2}>
                 Gender
               </Form.Label>
@@ -236,7 +222,7 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 First Name
               </Form.Label>
@@ -250,7 +236,7 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Middle Name
               </Form.Label>
@@ -264,7 +250,7 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Last Name
               </Form.Label>
@@ -278,7 +264,7 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 DOB
               </Form.Label>
@@ -293,7 +279,7 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Contact No
               </Form.Label>
@@ -307,7 +293,7 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Employee Code
               </Form.Label>
@@ -322,7 +308,7 @@ class EmployeeFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Department
               </Form.Label>
@@ -347,7 +333,7 @@ class EmployeeFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Position
               </Form.Label>
@@ -370,7 +356,7 @@ class EmployeeFormEdit extends Component {
                 </Form.Control>
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Date Of Joining
               </Form.Label>
@@ -385,7 +371,7 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Terminate Date
               </Form.Label>

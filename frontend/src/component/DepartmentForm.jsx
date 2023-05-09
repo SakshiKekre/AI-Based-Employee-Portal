@@ -41,7 +41,7 @@ class DepartmentForm extends Component {
 
         <div id="role-form-outer-div">
           <Form id="form" onSubmit={this.props.onDepartmentSubmit}>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Company
               </Form.Label>
@@ -57,7 +57,7 @@ class DepartmentForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Department
               </Form.Label>

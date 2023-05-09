@@ -9,6 +9,7 @@ import Education from "./Education.jsx";
 import FamilyInfo from "./FamilyInfo.jsx";
 import WorkExperience from "./WorkExperience.jsx";
 import LeaveApplicationEmp from "./LeaveApplicationEmp.jsx";
+import Bot from "../Bot.jsx"
 import NotFound404 from "../NotFound404.jsx";
 
 
@@ -19,7 +20,9 @@ faBriefcase,
 faAddressCard,
 faGraduationCap,
 faUserFriends,
-faCalendarAlt
+faCalendarAlt,
+faMale,
+faRobot,
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -129,6 +132,17 @@ class DashboardHR extends Component {
                     Leave Application
                   </Link>
                 </li>
+                <li>
+                                  <Link to={
+                                      "/employee/bot"
+                                    }>
+                                    <FontAwesomeIcon
+                                      icon={faRobot}
+                                      className="sidebar-icon"
+                                    />
+                                    Bot
+                                  </Link>
+                                </li>
               </ul>
             </div>
             {/* <div id="sidebar-top-content" /> */}
@@ -167,7 +181,11 @@ class DashboardHR extends Component {
                   path="/employee/:id/leave-application-emp"
                   render={props => <LeaveApplicationEmp data={this.props.data} />}
                 />
-               
+               <Route
+                                 exact
+                                 path="/employee/bot"
+                                 render={props => <Bot data={this.props.data} />}
+                               />
                 {/* <Route
                   exact
                   path="/employee"

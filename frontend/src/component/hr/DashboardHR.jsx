@@ -6,15 +6,16 @@ import { Redirect } from "react-router-dom";
 import Role from "../Role.jsx";
 import NavBar from "../NavBar.jsx";
 import RoleForm from "../RoleForm.jsx";
-import Position from "../Position.jsx";
+// import Position from "../Position.jsx";
 import Department from "../Department.jsx";
-import Country from "../Country.jsx";
-import State from "../State.jsx";
-import City from "../City.jsx";
-import Company from "../Company.jsx";
+// import Country from "../Country.jsx";
+// import State from "../State.jsx";
+// import City from "../City.jsx";
+// import Company from "../Company.jsx";
 import Employee from "../Employee.jsx";
 import Salary from "../Salary.jsx";
 import LeaveApplicationHR from "./LeaveApplicationHR.jsx";
+import Bot from "../chatBot.jsx";
 import NotFound404 from "../NotFound404.jsx";
 
 
@@ -33,31 +34,16 @@ faPlaceOfWorship,
 faArchway,
 faDollarSign,
 faBriefcase,
-faSitemap
+faSitemap,
+faRobot,
 } from "@fortawesome/free-solid-svg-icons";
 
 function RoleHRF() {
   return <Role />;
 }
 
-
-function PositionF() {
-  return <Position />;
-}
 function DepartmentF() {
   return <Department />;
-}
-function CountryF() {
-  return <Country />;
-}
-function StateF() {
-  return <State />;
-}
-function CityF() {
-  return <City />;
-}
-function CompanyF() {
-  return <Company />;
 }
 function EmployeeF() {
   return <Employee />;
@@ -67,6 +53,9 @@ function SalaryF() {
 }
 function LeaveApplicationHRF() {
   return <LeaveApplicationHR />;
+}
+function BotHRF(){
+    return <Bot />;
 }
 
 // function HRPortalF() {
@@ -119,7 +108,7 @@ class DashboardHR extends Component {
                 <li>
                   <Link to="/hr/employee">
                     <FontAwesomeIcon icon={faUsers} className="sidebar-icon" /> 
-                    Users 
+                    Employees
                   </Link> 
                 </li>
                 <li>
@@ -134,24 +123,14 @@ class DashboardHR extends Component {
                     Leave Application 
                   </Link> 
                 </li>
-                <li>
-                  <Link to="/hr/company">
-                    <FontAwesomeIcon icon={faBriefcase} className="sidebar-icon" /> 
-                    company 
-                  </Link> 
-                </li>
+
                 <li>
                   <Link to="/hr/role">
                     <FontAwesomeIcon icon={faUser} className="sidebar-icon" /> 
                     Role 
                   </Link> 
                 </li>
-                <li>
-                  <Link to="/hr/position">
-                    <FontAwesomeIcon icon={faSitemap} className="sidebar-icon" /> 
-                    Position 
-                  </Link> 
-                </li>
+
                 <li>
                   <Link to="/hr/department">
                     <FontAwesomeIcon
@@ -162,22 +141,10 @@ class DashboardHR extends Component {
                   </Link> 
                 </li>
                 <li>
-                  <Link to="/hr/country">
-                    <FontAwesomeIcon icon={faGlobeAmericas} className="sidebar-icon" /> 
-                    Country 
-                  </Link> 
-                </li>
-                <li>
-                  <Link to="/hr/state">
-                    <FontAwesomeIcon icon={faPlaceOfWorship} className="sidebar-icon" /> 
-                    State 
-                  </Link> 
-                </li>
-                <li>
-                  <Link to="/hr/city">
-                    <FontAwesomeIcon icon={faArchway} className="sidebar-icon" /> 
-                    City 
-                  </Link> 
+                    <Link to="/hr/bot">
+                        <FontAwesomeIcon icon={faRobot} className="sidebar-icon" />
+                        BOT
+                    </Link>
                 </li>
                 <li>
                  
@@ -204,42 +171,22 @@ class DashboardHR extends Component {
                   exact
                   component={SalaryF}
                 />
-                <Route
-                  path="/hr/company"
-                  exact
-                  component={CompanyF}
-                />
                 <Route path="/hr/role" component={RoleHRF} />
-                {/* <Route path="/hr/role/form" exact component={RoleFormF} /> */}
-                <Route
-                  path="/hr/position"
-                  exact
-                  component={PositionF}
-                />
+
                 <Route
                   path="/hr/department"
                   exact
                   component={DepartmentF}
                 />
                 <Route
-                  path="/hr/country"
-                  exact
-                  component={CountryF}
-                />
-                <Route
-                  path="/hr/state"
-                  exact
-                  component={StateF}
-                />
-                <Route
-                  path="/hr/city"
-                  exact
-                  component={CityF}
-                />
-                <Route
                   path="/hr/leave-application-hr"
                   exact
                   component={LeaveApplicationHRF}
+                />
+                <Route
+                    path="/hr/bot"
+                    exact
+                    component={BotHRF}
                 />
                  {/* <Route
                   path="/hr/portal-master"

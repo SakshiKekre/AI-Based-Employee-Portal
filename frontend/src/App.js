@@ -6,7 +6,6 @@ import jwt from "jsonwebtoken";
 import Login from "./component/Login.jsx";
 import Temp from "./component/Temp.jsx";
 import NotFound404 from "./component/NotFound404.jsx";
-import DashboardAdmin from "./component/admin/DashboardAdmin.jsx";
 import DashboardHR from "./component/hr/DashboardHR.jsx";
 import DashboardEmployee from "./component/employee/DashboardEmployee.jsx";
 import { Switch } from "react-router";
@@ -38,31 +37,9 @@ class App extends Component {
       isLogin: localStorage.getItem("isLogin") == "true"
 
     }, () => {
-      // temporary : for user to see user id and pass of all accounts to explore all features of app
-      this.alertFirstTime()
       console.log("data", this.state.data);
     });
 
-  }
-  alertFirstTime() {
-    if (this.state.firstTimeAlert && !this.state.isLogin) {
-      setTimeout(function () {
-        window.alert(
-          `To explore the feature of this application here is the temporary id and pass for all account
-      Admin:
-          id:admin@gmail.com
-          pass:admin
-      Hr:
-          id:hr@gmail.com
-          pass:hr
-      Employee:
-          id:emp@gmail.com
-          pass:emp
-      `)
-      }, 500);
-
-      this.setState({ firstTimeAlert: false });
-    }
   }
   render() {
     return (
@@ -72,10 +49,6 @@ class App extends Component {
             exact
             path="/login"
             render={props =>
-              this.state.data["Account"] == 1 ? (
-                // <Dashboard />
-                <Redirect to="/admin" />
-              ) : // <Login OnLogin={this.handleLogin}/>
 
                 this.state.data["Account"] == 2 ? (
                   // <Dashboard />
@@ -91,20 +64,6 @@ class App extends Component {
                         pass={this.state.pass}
                       />
                     )
-            }
-          />
-          <Route
-            // exact
-            path="/admin"
-            render={props =>
-              this.state.data["Account"] == 1 ? (
-                <DashboardAdmin
-                  data={this.state.data}
-                  onLogout={this.handleLogout}
-                />
-              ) : (
-                  <Redirect to="/login" />
-                )
             }
           />
           <Route
@@ -135,13 +94,6 @@ class App extends Component {
                 )
             }
           />
-          {/* <Route path="/" render={() => <Redirect to="/login" />} />
-          <Route
-            render={() => (
-              //  <h1>Not Found app.JS</h1>
-              <Redirect to="/login" />
-            )}
-          /> */}
           <Redirect to="/login" />
         </Switch>
       </Router >
@@ -166,8 +118,6 @@ class App extends Component {
     // history.push('/page');
     // History.push('/page');
     // this.context.history.push('/path');
-
-    //email=admin@fenil.com&password=admin
 
     let bodyLogin = {
       email: id,
@@ -199,29 +149,6 @@ class App extends Component {
           this.setState({ pass: false });
           this.setState({ loading: false });
         } else {
-          if (decodedData.Account == 1) {
-            // this.setState({ data: decodedData });
-            // localStorage.setItem('data', JSON.stringfy(decodedData));
-
-            this.setState({ pass: true });
-            // localStorage.setItem('pass', 'true');
-
-            this.setState({ loading: false });
-            // localStorage.setItem('loading', 'false');
-
-            this.setState({ isLogin: true });
-            localStorage.setItem("isLogin", true);
-
-            // localStorage.setItem('isLogin', 'true');
-            localStorage.setItem("Account", 1);
-            localStorage.setItem("_id", decodedData["_id"]);
-            localStorage.setItem(
-              "Name",
-              decodedData["FirstName"] + " " + decodedData["LastName"]
-            );
-            this.componentDidMount();
-            history.push("#/admin/role");
-          }
           if (decodedData.Account == 2) {
             // this.setState({ data: decodedData });
 
@@ -259,24 +186,6 @@ class App extends Component {
             history.push("#/employee/" + decodedData._id + "/personal-info");
           }
         }
-
-        //  console.log(decodedData);
-        //  console.log(`decodedData.toString()=="false" `,decodedData.toString()=="false" );
-
-        //  if(decodedData.toString()=="false")
-
-        //  { console.log("1");
-        //  this.setState({ pass: false })
-        //  this.setState({ loading: false }); ;
-
-        // }else{
-        //   console.log("2");
-        //   this.setState({ pass: true });
-        //  this.setState({ loading: false });
-        //  this.setState({ data: decodedData});
-        //  this.setState({ isLogin: true });
-
-        // }
       })
       .catch(err => {
         console.log(err);

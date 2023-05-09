@@ -33,7 +33,7 @@ class RoleForm extends Component {
         <h2 id="role-form-title">Add Role Details</h2>
         <div id="role-form-outer-div">
           <Form id="form" onSubmit={this.props.onRoleSubmit}>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Company
               </Form.Label>
@@ -49,7 +49,7 @@ class RoleForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Role
               </Form.Label>
