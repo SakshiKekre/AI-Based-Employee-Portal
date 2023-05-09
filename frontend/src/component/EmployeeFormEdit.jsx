@@ -21,7 +21,7 @@ class EmployeeFormEdit extends Component {
     EmployeeCodeData: this.props.editData["EmployeeCode"],
 
     DateOfJoiningData: this.props.editData["DateOfJoining"].slice(0, 10),
-    TerminateDateData: this.props.editData["DateOfJoining"].slice(0, 10)
+//     TerminateDateData: this.props.editData["TerminateDate"].slice(0, 10)
 
     // value={this.state.EmployeeTitleData}
     // onChange={value => this.onEmployeeTitleDataChange(value)}
@@ -143,6 +143,20 @@ class EmployeeFormEdit extends Component {
               </Col>
             </Form.Group>
 
+            {/* <Form.Group as={Row} className="form-group-spacer">
+              <Form.Label column sm={2}>
+                Password
+              </Form.Label>
+              <Col sm={10} className="form-input">
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  required
+                  value={this.state.PasswordData}
+                  onChange={value => this.onPasswordDataChange(value)}
+                />
+              </Col>
+            </Form.Group> */}
 
             <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
@@ -150,12 +164,7 @@ class EmployeeFormEdit extends Component {
               </Form.Label>
               <Col sm={10} className="form-input">
                 <Form.Control as="select" required>
-                  <option
-                    value="1"
-                    selected={this.props.editData["Account"] == 1}
-                  >
-                    Admin
-                  </option>
+
                   <option
                     value="2"
                     selected={this.props.editData["Account"] == 2}
@@ -333,29 +342,29 @@ class EmployeeFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row} className="form-group-spacer">
-              <Form.Label column sm={2}>
-                Position
-              </Form.Label>
-              <Col sm={10} className="form-input">
-                <Form.Control as="select" name="position" required>
-                  <option value="" disabled selected>
-                    Select your option
-                  </option>
-                  {this.state.positionData.map((data, index) => (
-                    <option
-                      key={index}
-                      value={data["_id"]}
-                      selected={
-                        this.props.editData["position"][0]["_id"] == data["_id"]
-                      }
-                    >
-                      {data["PositionName"]}
-                    </option>
-                  ))}
-                </Form.Control>
-              </Col>
-            </Form.Group>
+{/*             <Form.Group as={Row} className="form-group-spacer"> */}
+{/*               <Form.Label column sm={2}> */}
+{/*                 Position */}
+{/*               </Form.Label> */}
+{/*               <Col sm={10} className="form-input"> */}
+{/*                 <Form.Control as="select" name="position" required> */}
+{/*                   <option value="" disabled selected> */}
+{/*                     Select your option */}
+{/*                   </option> */}
+{/*                   {this.state.positionData.map((data, index) => ( */}
+{/*                     <option */}
+{/*                       key={index} */}
+{/*                       value={data["_id"]} */}
+{/*                       selected={ */}
+{/*                         this.props.editData["position"][0]["_id"] == data["_id"] */}
+{/*                       } */}
+{/*                     > */}
+{/*                       {data["PositionName"]} */}
+{/*                     </option> */}
+{/*                   ))} */}
+{/*                 </Form.Control> */}
+{/*               </Col> */}
+{/*             </Form.Group> */}
             <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Date Of Joining
@@ -371,20 +380,20 @@ class EmployeeFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row} className="form-group-spacer">
-              <Form.Label column sm={2}>
-                Terminate Date
-              </Form.Label>
-              <Col sm={10} className="form-input">
-                <Form.Control
-                  type="date"
-                  placeholder="Terminate Date"
-                  //   value={this.props.editData["TerminateDate"].slice(0, 10)}
-                  value={this.state.TerminateDateData}
-                  onChange={value => this.onTerminateDateDataChange(value)}
-                />
-              </Col>
-            </Form.Group>
+{/*             <Form.Group as={Row} className="form-group-spacer"> */}
+{/*               <Form.Label column sm={2}> */}
+{/*                 Terminate Date */}
+{/*               </Form.Label> */}
+{/*               <Col sm={10} className="form-input"> */}
+{/*                 <Form.Control */}
+{/*                   type="date" */}
+{/*                   placeholder="Terminate Date" */}
+{/*                   //   value={this.props.editData["TerminateDate"].slice(0, 10)} */}
+{/*                   value={this.state.TerminateDateData} */}
+{/*                   onChange={value => this.onTerminateDateDataChange(value)} */}
+{/*                 /> */}
+{/*               </Col> */}
+{/*             </Form.Group> */}
 
             <Form.Group as={Row} id="form-submit-button">
               <Col sm={{ span: 10, offset: 2 }}>

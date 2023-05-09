@@ -53,14 +53,12 @@ var employeeSchema = new mongoose.Schema({
   Gender: { type: String, required: true },
   DOB: { type: Date, required: true },
   DateOfJoining: { type: Date, required: true },
-//  TerminateDate: { type: Date },
   Deleted: { type: Boolean },
   Photo: { type: String },
   ContactNo: { type: String, required: true },
   EmployeeCode: { type: String, required: true },
   Account: { type: Number, required: true },
   role: [{ type: mongoose.Schema.Types.ObjectId, ref: "Role" }],
-  position: [{ type: mongoose.Schema.Types.ObjectId, ref: "Position" }],
   department: [{ type: mongoose.Schema.Types.ObjectId, ref: "Department" }],
   salary: [{ type: mongoose.Schema.Types.ObjectId, ref: "Salary" }],
   education: [{ type: mongoose.Schema.Types.ObjectId, ref: "Education" }],
@@ -87,7 +85,7 @@ var Employee = mongoose.model("Employee", employeeSchema);
 
 const EmployeeValidation = Joi.object().keys({
   RoleID: Joi.optional(),
-  PositionID: Joi.optional(),
+//  PositionID: Joi.optional(),
   DepartmentID: Joi.optional(),
   SalaryID: Joi.optional(),
   FirstName: Joi.string()
@@ -371,23 +369,23 @@ const RoleValidation = Joi.object().keys({
   CompanyID: Joi.required()
 });
 
-var positionSchema = new mongoose.Schema({
-  PositionName: { type: String, required: true },
-  company: [{ type: mongoose.Schema.Types.ObjectId, ref: "Company" }]
-});
-positionSchema.plugin(autoIncrement.plugin, {
-  model: "Position",
-  field: "PositionID"
-});
+//var positionSchema = new mongoose.Schema({
+//  PositionName: { type: String, required: true },
+//  company: [{ type: mongoose.Schema.Types.ObjectId, ref: "Company" }]
+//});
+//positionSchema.plugin(autoIncrement.plugin, {
+//  model: "Position",
+//  field: "PositionID"
+//});
+//
+//var Position = mongoose.model("Position", positionSchema);
 
-var Position = mongoose.model("Position", positionSchema);
-
-const PositionValidation = Joi.object().keys({
-  PositionName: Joi.string()
-    .max(200)
-    .required(),
-  CompanyID: Joi.required()
-});
+//const PositionValidation = Joi.object().keys({
+//  PositionName: Joi.string()
+//    .max(200)
+//    .required(),
+//  CompanyID: Joi.required()
+//});
 
 var departmentSchema = new mongoose.Schema({
   DepartmentName: { type: String, required: true },
@@ -1581,6 +1579,7 @@ app.get("/api/employee", verifyHR, (req, res) => {
 });
 
 app.post("/api/employee", verifyHR, (req, res) => {
+console.log(req);
   Joi.validate(req.body, EmployeeValidation, (err, result) => {
     if (err) {
       console.log("ERROR !! in add employee: ",err);
@@ -1601,9 +1600,7 @@ app.post("/api/employee", verifyHR, (req, res) => {
         ContactNo: req.body.ContactNo,
         EmployeeCode: req.body.EmployeeCode,
         department: req.body.DepartmentID,
-        position: req.body.PositionID,
         DateOfJoining: req.body.DateOfJoining
-//        TerminateDate: req.body.TerminateDate
       };
 
       Employee.create(newEmployee, function (err, employee) {
@@ -1664,16 +1661,16 @@ app.put("/api/employee/:id", verifyHR, (req, res) => {
 });
 
 app.delete("/api/employee/:id", verifyHR, (req, res) => {
-  // Employee.findByIdAndRemove({ _id: req.params.id }, function (err, employee) {
-  //   if (!err) {
-  //     console.log(" state deleted");
-  //     res.send(employee);
-  //   } else {
-  //     console.log(err);
-  //     res.send("error");
-  //   }
-  // });
-  res.send("error");
+   Employee.findByIdAndRemove({ _id: req.params.id }, function (err, employee) {
+     if (!err) {
+       console.log(" state deleted");
+       res.send(employee);
+     } else {
+       console.log(err);
+       res.send("error");
+     }
+   });
+//  res.send("error");
   console.log("delete");
   console.log(req.params.id);
 });

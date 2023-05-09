@@ -119,9 +119,7 @@ class Employee extends Component {
       ContactNo: event.target[10].value,
       EmployeeCode: event.target[11].value,
       DepartmentID: event.target[12].value,
-      PositionID: event.target[13].value,
-      DateOfJoining: event.target[14].value,
-//       TerminateDate: event.target[15].value,
+      DateOfJoining: event.target[13].value,
     };
 //     console.log("TerminateDate : ")
     axios
@@ -176,8 +174,7 @@ class Employee extends Component {
       ContactNo: newInfo.target[9].value,
       EmployeeCode: newInfo.target[10].value,
       DepartmentID: newInfo.target[11].value,
-      PositionID: newInfo.target[12].value,
-      DateOfJoining: newInfo.target[13].value,
+      DateOfJoining: newInfo.target[12].value,
 //       TerminateDate: newInfo.target[14].value,
     };
     console.log("update", body);

@@ -16,6 +16,7 @@ import Employee from "../Employee.jsx";
 import Salary from "../Salary.jsx";
 import LeaveApplicationHR from "./LeaveApplicationHR.jsx";
 import Bot from "../chatBot.jsx";
+import Analytics from "../hr/analytics.jsx";
 import NotFound404 from "../NotFound404.jsx";
 
 
@@ -36,6 +37,7 @@ faDollarSign,
 faBriefcase,
 faSitemap,
 faRobot,
+faChartBar,
 } from "@fortawesome/free-solid-svg-icons";
 
 function RoleHRF() {
@@ -56,6 +58,9 @@ function LeaveApplicationHRF() {
 }
 function BotHRF(){
     return <Bot />;
+}
+function AnalyticsHRF(){
+    return <Analytics />;
 }
 
 // function HRPortalF() {
@@ -147,12 +152,11 @@ class DashboardHR extends Component {
                     </Link>
                 </li>
                 <li>
-                 
+                    <Link to="/hr/analytics">
+                    <FontAwesomeIcon icon={faChartBar} className="sidebar-icon" />
+                        Analytics
+                    </Link>
                 </li>
-                {/* <li> <a href=""><FontAwesomeIcon icon={faChair} className="sidebar-icon"/> Position</a>   </li> */}
-                {/* <li> <a href=""><FontAwesomeIcon icon={faBuilding} className="sidebar-icon"/> Department</a>   </li> */}
-                {/* <li> <a href=""><FontAwesomeIcon icon={faDollarSign} className="sidebar-icon"/> Project Bidding</a>   </li> */}
-                {/* <li> <a href=""><FontAwesomeIcon icon={faTasks} className="sidebar-icon"/> Portal Master</a>   </li> */}
               </ul>
             </div>
             {/* <div id="sidebar-top-content" /> */}
@@ -188,21 +192,11 @@ class DashboardHR extends Component {
                     exact
                     component={BotHRF}
                 />
-                 {/* <Route
-                  path="/hr/portal-master"
-                  exact
-                  component={HRPortalF}
-                /> */}
-                 {/* <Route
-                  path="/hr/project-bid"
-                  exact
-                  component={HRProjectBidF}
-                /> */}
-                {/* <Route
-                  exact
-                  path="/hr"
-                  render={() => <Redirect to="hr/employee" />}
-                /> */}
+                <Route
+                    path="/hr/analytics"
+                    exact
+                    component={AnalyticsHRF}
+                />
                 <Route render={() => <NotFound404/>} />
                 
               </Switch>

@@ -6,7 +6,7 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 class EmployeeForm extends Component {
   state = {
     roleData: [],
-    positionData: [],
+//     positionData: [],
     departmentData: [],
   }
 
@@ -24,20 +24,20 @@ class EmployeeForm extends Component {
         console.log(error);
       });
   };
-  loadPositionInfo = () => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/api/position", {
-        headers: {
-          authorization: localStorage.getItem("token") || ""
-        }
-      })
-      .then(response => {
-        this.setState({ positionData: response.data });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
+//   loadPositionInfo = () => {
+//     axios
+//       .get(process.env.REACT_APP_API_URL + "/api/position", {
+//         headers: {
+//           authorization: localStorage.getItem("token") || ""
+//         }
+//       })
+//       .then(response => {
+//         this.setState({ positionData: response.data });
+//       })
+//       .catch(error => {
+//         console.log(error);
+//       });
+//   };
   loadDepartmentInfo = () => {
     axios
       .get(process.env.REACT_APP_API_URL + "/api/department", {
@@ -54,7 +54,6 @@ class EmployeeForm extends Component {
   };
   componentWillMount() {
     this.loadRoleInfo();
-    this.loadPositionInfo();
     this.loadDepartmentInfo();
   }
 
@@ -96,8 +95,8 @@ class EmployeeForm extends Component {
     </Form.Label>
               <Col sm={10} className="form-input">
                 <Form.Control as="select" required>
-                  <option value="1">HR</option>
-                  <option value="2">Employee</option>
+                  <option value="2">HR</option>
+                  <option value="3">Employee</option>
                 </Form.Control>
               </Col>
             </Form.Group>
@@ -241,21 +240,21 @@ class EmployeeForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row} className="form-group-spacer">
-              <Form.Label column sm={2}>
-                Position
-              </Form.Label>
-              <Col sm={10} className="form-input">
-                <Form.Control as="select" name="position" required>
-                  <option value="" disabled selected>
-                    Select your option
-                  </option>
-                  {this.state.positionData.map((data, index) => (
-                    <option key={index} value={data["_id"]}>{data["PositionName"]}</option>
-                  ))}
-                </Form.Control>
-              </Col>
-            </Form.Group>
+{/*             <Form.Group as={Row} className="form-group-spacer"> */}
+{/*               <Form.Label column sm={2}> */}
+{/*                 Position */}
+{/*               </Form.Label> */}
+{/*               <Col sm={10} className="form-input"> */}
+{/*                 <Form.Control as="select" name="position" required> */}
+{/*                   <option value="" disabled selected> */}
+{/*                     Select your option */}
+{/*                   </option> */}
+{/*                   {this.state.positionData.map((data, index) => ( */}
+{/*                     <option key={index} value={data["_id"]}>{data["PositionName"]}</option> */}
+{/*                   ))} */}
+{/*                 </Form.Control> */}
+{/*               </Col> */}
+{/*             </Form.Group> */}
             <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Date Of Joining
@@ -268,17 +267,17 @@ class EmployeeForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row} className="form-group-spacer">
-              <Form.Label column sm={2}>
-                Terminate Date
-              </Form.Label>
-              <Col sm={10} className="form-input">
-                <Form.Control
-                  type="date"
-                  placeholder="Terminate Date"
-                />
-              </Col>
-            </Form.Group>
+{/*             <Form.Group as={Row} className="form-group-spacer"> */}
+{/*               <Form.Label column sm={2}> */}
+{/*                 Terminate Date */}
+{/*               </Form.Label> */}
+{/*               <Col sm={10} className="form-input"> */}
+{/*                 <Form.Control */}
+{/*                   type="date" */}
+{/*                   placeholder="Terminate Date" */}
+{/*                 /> */}
+{/*               </Col> */}
+{/*             </Form.Group> */}
 
 
 

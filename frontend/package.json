@@ -22,7 +22,9 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-spinners": "^0.5.4",
-    "react-switch": "^5.0.0"
+    "react-switch": "^5.0.0",
+    "recharts": "^2.6.0",
+    "victory": "^36.6.10"
   },
   "scripts": {
     "start": "react-scripts start",

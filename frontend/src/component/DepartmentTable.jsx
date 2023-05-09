@@ -92,7 +92,7 @@ class DepartmentTable extends Component {
         this.departmentObj.map(data => {
           let temp = {
             data,
-            CompanyName: data["company"][0]["CompanyName"],
+            CompanyName: "San José State University",
             DepartmentName: data["DepartmentName"],
 
           };

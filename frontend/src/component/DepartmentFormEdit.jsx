@@ -56,23 +56,17 @@ class DepartmentForm extends Component {
               <Form.Label column sm={2}>
                 Company
               </Form.Label>
-              <Col sm={10} className="form-input">
-                <Form.Control as="select" name="country" required>
-                  <option value="" disabled selected>
-                    Select your option
-                  </option>
-                  {this.companyData.map((data, index) => (
-                    <option
-                      value={data["_id"]}
-                      selected={
-                        this.props.editData["company"][0]["_id"] == data["_id"]
-                      }
-                    >
-                      {data["CompanyName"]}
-                    </option>
-                  ))}
-                </Form.Control>
-              </Col>
+
+                  <Col sm={10} className="form-input">
+                                  <Form.Control
+                                    type="Text"
+                                    placeholder="Department"
+                                    name="DepartmentName"
+                                    required
+                                    value="San José State University"
+                                    readOnly={true}
+                                  />
+                                </Col>
             </Form.Group>
 
             <Form.Group as={Row} className="form-group-spacer">
