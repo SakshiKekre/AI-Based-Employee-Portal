@@ -30,8 +30,28 @@ class analytics extends Component {
     };
   }
 
+///analytics/employee-gender-count
+
+getData = () => {
+       axios
+          .get(process.env.REACT_APP_API_URL + "/analytics/employee-gender-count", {
+            headers: {
+              authorization: localStorage.getItem("token") || ""
+            }
+          })
+          .then(response => {
+            console.log("response : ",response.data);
+            this.setState({data : response.data});
+            console.log(this.state.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+}
+
   componentDidMount() {
     this.animate();
+    this.getData();
   }
 
   animate() {
@@ -48,44 +68,47 @@ class analytics extends Component {
     return (
       <React.Fragment>
         <h2 id="role-title">Analytics</h2>
-        <BarChart
-          width={520}
-          height={300}
-          data={this.state.data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          barSize={20}
-        >
-          <XAxis dataKey="x" scale="point" padding={{ left: 10, right: 10 }} />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Bar
-            dataKey="y"
-            fill="rgb(88 99 161)"
-            background={{ fill: "#eee" }}
-          />
-        </BarChart>
+{/*         <BarChart */}
+{/*           width={520} */}
+{/*           height={300} */}
+{/*           data={this.state.data} */}
+{/*           margin={{ */}
+{/*             top: 5, */}
+{/*             right: 30, */}
+{/*             left: 20, */}
+{/*             bottom: 5, */}
+{/*           }} */}
+{/*           barSize={20} */}
+{/*         > */}
+{/*           <XAxis dataKey="count" scale="point" padding={{ left: 10, right: 10 }} /> */}
+{/*           <YAxis /> */}
+{/*           <Tooltip /> */}
+{/*           <Legend /> */}
+{/*           <CartesianGrid strokeDasharray="3 3" /> */}
+{/*           <Bar */}
+{/*             dataKey="gender" */}
+{/*             fill="rgb(88 99 161)" */}
+{/*             background={{ fill: "#eee" }} */}
+{/*           /> */}
+{/*         </BarChart> */}
 
-<PieChart width={300} height={200}>
+<div>
+<h5 id="role-title"> Male to Female Ratio</h5>
+
+<PieChart width={300} height={300}>
   <Pie
-    dataKey="y"
+    dataKey="count"
     isAnimationActive={true}
     data={this.state.data}
     cx="50%"
     cy="50%"
-    outerRadius={80}
+    outerRadius={90}
     fill="rgb(88 99 161)"
-    label
+    label={(entry) => entry.gender}
   />
   <Tooltip />
 </PieChart>
-
+</div>
 
       </React.Fragment>
     );

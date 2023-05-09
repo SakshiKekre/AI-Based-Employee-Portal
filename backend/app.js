@@ -500,6 +500,24 @@ const ProjectValidation = Joi.object().keys({
   Portal_ID: Joi.optional()
 });
 
+//////ANALYTICS/////
+app.get('/analytics/employee-gender-count', async (req, res) => {
+
+Employee.aggregate([
+          { $group: { _id: "$Gender", count: { $sum: 1 } } },
+          { $project: { gender: "$_id", count: 1, _id: 0 } }
+        ], function(err, result) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(result);
+    res.status(200).json(result);
+  }
+});
+
+});
+
+
 /////////////////////////////////////
 //////   HR                      ////
 /////////////////////////////////////
