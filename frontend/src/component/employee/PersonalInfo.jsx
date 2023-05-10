@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./PersonalInfo.css";
+// import "./PersonalInfo.css";
 import axios from "axios";
-import PersonalInfoTable from "./PersonalInfoCard";
+import PersonalInfoTable from "./PersonalInfoCard.jsx";
 import PersonalInfoFormEdit from "./PersonalInfoFormEdit.jsx";
 class PersonalInfo extends Component {
   state = {

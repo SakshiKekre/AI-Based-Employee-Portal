@@ -27,7 +27,7 @@ faRobot,
 
 
 
-class DashboardHR extends Component {
+class DashboardEmployee extends Component {
   state = {
     redirect: true,
     checked: true 
@@ -201,8 +201,9 @@ class DashboardHR extends Component {
                 /> */}
                 <Route
                   render={
-                    () => <NotFound404/>
-                    // <Redirect to={"/employee/"+ this.props.data["_id"]+"/personal-info"} />
+                    () => 
+                    // <NotFound404/>
+                     <Redirect to={"/employee/"+ this.props.data["_id"]+"/personal-info"} />
                   }
                 />
               </Switch>
@@ -214,4 +215,4 @@ class DashboardHR extends Component {
   }
 }
 
-export default DashboardHR;
+export default DashboardEmployee;

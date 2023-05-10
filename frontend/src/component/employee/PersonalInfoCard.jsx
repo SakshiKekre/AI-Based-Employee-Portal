@@ -126,7 +126,10 @@ componentDidMount() {
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">
-                        <div><Button onClick={() => this.props.onEditPersonalInfo(this.state.data)}>Hi, I am 'Edit'. Dont click me yet!</Button></div>
+                        <div><Button
+                        //  onClick={() => this.props.onEditPersonalInfo(this.state.data)}>Hi, I am 'Edit'. Dont click me yet!
+                        onClick={() => this.props.onEditPersonalInfo(this.state.personalInfoData)}>Edit
+                         </Button></div>
                       </MDBCol>
                     </MDBRow>
 

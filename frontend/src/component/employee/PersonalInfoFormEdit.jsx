@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./PersonalInfoFormEdit.css";
+// import "./PersonalInfoFormEdit.css";
 import axios from "axios";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
@@ -200,12 +200,12 @@ class PersonalInfoFormEdit extends Component {
             </Form.Group>
             <Form.Group as={Row}>
               <Form.Label column sm={2}>
-                PAN Card No
+                SSN
               </Form.Label>
               <Col sm={10} className="form-input">
                 <Form.Control
                   type="text"
-                  placeholder="PAN Card No"
+                  placeholder="SSN"
                   required
                   value={this.state.PANcardNoData}
                   onChange={value => this.onPANcardNoDataChange(value)}
