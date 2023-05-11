@@ -121,28 +121,14 @@ componentDidMount() {
                         <MDBCardText className="text-muted">{this.state.personalInfoData.PresentAddress}</MDBCardText>
                       </MDBCol>
                     </MDBRow>
-
-                    <MDBTypography tag="h6">Contact</MDBTypography>
-                    <hr className="mt-0 mb-4" />
-                    <MDBRow className="pt-1">
-                      <MDBCol size="6" className="mb-3">
-                        <div><Button
-                        //  onClick={() => this.props.onEditPersonalInfo(this.state.data)}>Hi, I am 'Edit'. Dont click me yet!
-                        onClick={() => this.props.onEditPersonalInfo(this.state.personalInfoData)}>Edit
-                         </Button></div>
-                      </MDBCol>
-                    </MDBRow>
-
-                    <div className="d-flex justify-content-start">
-                      <a href="#!"><MDBIcon fab icon="facebook me-3" size="lg" /></a>
-                      <a href="#!"><MDBIcon fab icon="twitter me-3" size="lg" /></a>
-                      <a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
-                    </div>
                   </MDBCardBody>
                 </MDBCol>
               </MDBRow>
             </MDBCard>
           </MDBCol>
+        <MDBRow className="g-0">
+          <Button className="btn-dark" onClick={() => this.props.onEditPersonalInfo(this.state.personalInfoData)}>Edit</Button>
+        </MDBRow>
         </MDBRow>
       </MDBContainer>
     </section>
