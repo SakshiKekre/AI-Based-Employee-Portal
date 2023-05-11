@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import "./FamilyInfo.css";
 import axios from "axios";
-import FamilyInfoTable from "./FamilyInfoTable.jsx";
-import FamilyInfoForm from "./FamilyInfoForm.jsx";
-import FamilyInfoFormEdit from "./FamilyInfoFormEdit.jsx";
+import FamilyInfoTable from "./dependants/DependantsCard.jsx";
+import FamilyInfoForm from "./dependants/FamilyInfoForm.jsx";
+import FamilyInfoFormEdit from "./dependants/FamilyInfoFormEdit.jsx";
 class FamilyInfo extends Component {
   state = {
     table: true,
@@ -15,8 +14,6 @@ class FamilyInfo extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <h1>iiiiiiiiiinnnnnnnnnnnnnn{
-          JSON.stringify(this.props.data)}</h1> */}
 
         {this.state.table ? (
           this.state.editForm ? (
