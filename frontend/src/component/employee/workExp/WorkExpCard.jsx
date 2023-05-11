@@ -111,7 +111,7 @@ componentDidMount() {
            
           </MDBCol>
           <MDBRow className="g-0">
-            <Button className="ml-2 btn-dark" id="add-button" onClick={this.props.onAddWorkExperience}>
+            <Button className="btn-dark" id="add-button" onClick={this.props.onAddWorkExperience}>
                 Add New Experience
             </Button>
             </MDBRow>

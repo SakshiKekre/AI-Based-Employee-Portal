@@ -117,7 +117,7 @@ componentDidMount() {
            
           </MDBCol>
           <MDBRow className="g-0">
-            <Button className="ml-2 btn-dark" id="add-button" onClick={this.props.onAddFamilyInfo}>
+            <Button className="btn-dark" id="add-button" onClick={this.props.onAddFamilyInfo}>
                 Add New Dependant
             </Button>
             </MDBRow>
