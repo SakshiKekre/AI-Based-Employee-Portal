@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./Education.css";
 import axios from "axios";
-import EducationTable from "./EducationTable.jsx";
+import EducationTable from "./education/EducationCard.jsx";
+// import EducationTable from "./EducationTable.jsx";
 import EducationForm from "./EducationForm.jsx";
 import EducationFormEdit from "./EducationFormEdit.jsx";
 class Education extends Component {
@@ -15,8 +16,6 @@ class Education extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <h1>iiiiiiiiiinnnnnnnnnnnnnn{
-          JSON.stringify(this.props.data)}</h1> */}
 
         {this.state.table ? (
           this.state.editForm ? (
@@ -70,12 +69,12 @@ class Education extends Component {
       });
   };
   handleAddEducation = () => {
-    console.log("clicked1");
+    console.log("handleAddEducation clicked");
     this.setState({ table: false });
   };
   handleEditEducation = e => {
     console.log(e);
-    console.log("clicked6");
+    console.log("handleEditEducation clicked");
     this.setState({ editForm: true });
     this.setState({ editData: e });
     this.setState({ editFormGender: e["Gender"] })
@@ -85,13 +84,10 @@ class Education extends Component {
     this.setState({ table: true });
   };
   handleEditFormClose = () => {
-    console.log("clicked5");
+    console.log("handleEditFormClose clicked");
     this.setState({ editForm: false });
   };
-  // handleFormClose = () => {
-  //   console.log("clicked1");
-  //   this.setState({ table: true });
-  // };
+  
   handleEducationEditUpdate = (info, newInfo) => {
     newInfo.preventDefault();
     console.log("zero data", newInfo.target[0].value);
