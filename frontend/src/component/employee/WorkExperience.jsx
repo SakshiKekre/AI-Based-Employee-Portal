@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./WorkExperience.css";
 import axios from "axios";
-import WorkExperienceTable from "./WorkExperienceTable.jsx";
+import WorkExperienceTable from "./workExp/WorkExpCard.jsx";
 import WorkExperienceForm from "./WorkExperienceForm.jsx";
 import WorkExperienceFormEdit from "./WorkExperienceFormEdit.jsx";
 class WorkExperience extends Component {

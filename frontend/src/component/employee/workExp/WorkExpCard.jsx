@@ -6,44 +6,38 @@ import axios from "axios";
 import { Button } from 'react-bootstrap';
 // import { Component } from 'ag-grid-community';
 
-export default class DependantsCard extends Component {
+export default class WorkExpCard extends Component {
         
   state = {
-    familyInfoData: [],
+    workExperienceData: [],
       loading: true,
       rowData: []
   };
 
-  familyInfoObj = [];
+  workExperienceObj = [];
   rowDataT = [];
-  loadFamilyInfoData = () => {
+  loadWorkExperienceData = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "/api/family-info/" + this.props.data["_id"], {
+      .get(process.env.REACT_APP_API_URL + "/api/work-experience/" + this.props.data["_id"], {
         headers: {
           authorization: localStorage.getItem("token") || ""
         }
       })
       .then(response => {
-        this.familyInfoObj = response.data;
-        // this.setState({ educationData: response.data });
-        this.setState({ rowData: this.familyInfoObj.familyInfo});
-        console.log("response", response.data);
-
+        this.workExperienceObj = response.data;
+        this.setState({ rowData: this.workExperienceObj.workExperience});
         this.setState({ loading: false });
-       
-        console.log("rowData" + JSON.stringify(this.state.rowData));
-
       })
       .catch(error => {
         console.log(error);
       });
   };
 
-  onFamilyInfoDelete = (e1, e2) => {
+  onWorkExperienceDelete = (e1, e2) => {
     console.log(e1, e2);
     if (window.confirm("Are you sure to delete this record? ") == true) {
       axios
-        .delete(process.env.REACT_APP_API_URL + "/api/family-info/" + e1 + "/" + e2, {
+        .delete(process.env.REACT_APP_API_URL + "/api/work-experience/" + e1 + "/" + e2, {
           headers: {
             authorization: localStorage.getItem("token") || ""
           }
@@ -60,7 +54,7 @@ export default class DependantsCard extends Component {
 
 componentDidMount() {
     console.log("componentDidMount")
-    this.loadFamilyInfoData();
+    this.loadWorkExperienceData();
   }
 
   render()
@@ -76,34 +70,34 @@ componentDidMount() {
               <MDBRow className="g-0">
                 <MDBCol md="8">
                   <MDBCardBody className="p-4">
-                    <MDBTypography tag="h6">Dependents</MDBTypography>
+                    <MDBTypography tag="h6">Work Experience History</MDBTypography>
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Name</MDBTypography>
+                        <MDBTypography tag="h6">Company Name</MDBTypography>
                         <MDBCardText className="text-muted">
-                            {eachRow.Name}
+                            {eachRow.CompanyName}
                         </MDBCardText>
                       </MDBCol>
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Relationship</MDBTypography>
-                        <MDBCardText className="text-muted">{eachRow.Relationship}</MDBCardText>
+                        <MDBTypography tag="h6">Designation</MDBTypography>
+                        <MDBCardText className="text-muted">{eachRow.Designation}</MDBCardText>
                       </MDBCol>
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Date of Birth</MDBTypography>
-                        <MDBCardText className="text-muted">{eachRow.DOB}</MDBCardText>
+                        <MDBTypography tag="h6">Date of Joining</MDBTypography>
+                        <MDBCardText className="text-muted">{eachRow.FromDate}</MDBCardText>
                       </MDBCol>
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Occupation</MDBTypography>
-                        <MDBCardText className="text-muted">{eachRow.Occupation}</MDBCardText>
+                        <MDBTypography tag="h6">Date of Exit</MDBTypography>
+                        <MDBCardText className="text-muted">{eachRow.ToDate}</MDBCardText>
                       </MDBCol>
                     </MDBRow>
 
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">
                         <div>
-                            <Button className="ml-2 btn-dark" onClick={() => this.props.onEditFamilyInfo(eachRow)}>Edit</Button>
-                            <Button className="ml-2 btn-dark" onClick={() => this.onFamilyInfoDelete(this.props.data["_id"], eachRow._id) }>Delete</Button>
+                            <Button className="ml-2 btn-dark" onClick={() => this.props.onEditWorkExperience(eachRow)}>Edit</Button>
+                            <Button className="ml-2 btn-dark" onClick={() => this.onWorkExperienceDelete(this.props.data["_id"], eachRow._id) }>Delete</Button>
                         </div>
                       </MDBCol>
                     </MDBRow>
@@ -117,8 +111,8 @@ componentDidMount() {
            
           </MDBCol>
           <MDBRow className="g-0">
-            <Button className="ml-2 btn-dark" id="add-button" onClick={this.props.onAddFamilyInfo}>
-                Add New Dependant
+            <Button className="ml-2 btn-dark" id="add-button" onClick={this.props.onAddWorkExperience}>
+                Add New Experience
             </Button>
             </MDBRow>
         </MDBRow>
