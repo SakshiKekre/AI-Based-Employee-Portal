@@ -59,9 +59,9 @@ function LeaveApplicationHRF() {
 function BotHRF(){
     return <Bot />;
 }
-function AnalyticsHRF(){
-    return <Analytics />;
-}
+// function AnalyticsHRF(){
+//     return <Analytics />;
+// }
 
 // function HRPortalF() {
 //   return <HRPortal />;
@@ -151,12 +151,12 @@ class DashboardHR extends Component {
                         BOT
                     </Link>
                 </li>
-                <li>
-                    <Link to="/hr/analytics">
-                    <FontAwesomeIcon icon={faChartBar} className="sidebar-icon" />
-                        Analytics
-                    </Link>
-                </li>
+{/*                 <li> */}
+{/*                     <Link to="/hr/analytics"> */}
+{/*                     <FontAwesomeIcon icon={faChartBar} className="sidebar-icon" /> */}
+{/*                         Analytics */}
+{/*                     </Link> */}
+{/*                 </li> */}
               </ul>
             </div>
             {/* <div id="sidebar-top-content" /> */}
@@ -192,11 +192,6 @@ class DashboardHR extends Component {
                     exact
                     component={BotHRF}
                 />
-                <Route
-                    path="/hr/analytics"
-                    exact
-                    component={AnalyticsHRF}
-                />
                 <Route render={() => <NotFound404/>} />
                 
               </Switch>
@@ -209,3 +204,10 @@ class DashboardHR extends Component {
 }
 
 export default DashboardHR;
+
+
+{/*                 <Route */}
+{/*                     path="/hr/analytics" */}
+{/*                     exact */}
+{/*                     component={AnalyticsHRF} */}
+{/*                 /> */}

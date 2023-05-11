@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./LeaveApplicationEmpFormEdit.css";
+import "./LeaveApplicationEmpForm.css";
 // import { Form,Button } from "react-bootstrap";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import axios from "axios";
@@ -64,7 +64,7 @@ class LeaveApplicationEmpForm extends Component {
           </Form.Control>
     </Col>
     </Form.Group>
-    <Form.Group as={Row}>
+    <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               FromDate
               </Form.Label>
@@ -77,7 +77,7 @@ class LeaveApplicationEmpForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               ToDate
               </Form.Label>
@@ -90,7 +90,7 @@ class LeaveApplicationEmpForm extends Component {
                 />
               </Col>
             </Form.Group>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     Reason for leave
     </Form.Label>

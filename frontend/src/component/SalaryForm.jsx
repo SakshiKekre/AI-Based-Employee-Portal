@@ -133,8 +133,6 @@ class SalaryForm extends Component {
                 />
               </Col>
             </Form.Group>
-
-            
             <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Tax Deduction
@@ -142,7 +140,7 @@ class SalaryForm extends Component {
               <Col sm={10} className="form-input">
                 <Form.Control
                   type="number"
-                  placeholder="Basic Salary"
+                  placeholder="Tax Deduction in %"
                   required
                 />
               </Col>

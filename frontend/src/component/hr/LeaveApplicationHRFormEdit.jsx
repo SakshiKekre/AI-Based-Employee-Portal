@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./LeaveApplicationHRFormEdit.css";
+import "./LeaveApplicationHR.css";
 // import { Form,Button } from "react-bootstrap";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import axios from "axios";
@@ -45,7 +45,7 @@ class LeaveApplicationHRForm extends Component {
               this.props.onLeaveApplicationHREditUpdate(this.props.editData, e)
             }
           >
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Leave Type
               </Form.Label>
@@ -83,7 +83,7 @@ class LeaveApplicationHRForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 FromDate
               </Form.Label>
@@ -96,7 +96,7 @@ class LeaveApplicationHRForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 ToDate
               </Form.Label>
@@ -109,7 +109,7 @@ class LeaveApplicationHRForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Reason for leave
               </Form.Label>
@@ -124,7 +124,7 @@ class LeaveApplicationHRForm extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Leave Status
               </Form.Label>

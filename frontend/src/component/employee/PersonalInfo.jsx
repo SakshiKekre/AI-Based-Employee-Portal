@@ -82,8 +82,6 @@ class PersonalInfo extends Component {
     this.setState({ editForm: false });
   };
   handleEditFormGenderChange = e => {
-    // console.log(e.currentTarget.value);
-    // console.log("ggggggggggggggggggggggggggggeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeennnnnnnnnnnnnnnnnnnnnnnnn")
     this.setState({
       editFormGender: e.currentTarget.value
     });

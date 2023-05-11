@@ -646,7 +646,7 @@ app.get("/api", (req, res) => {
   res.send("employee management system API 😀");
 });
 
-app.p
+
 app.get("/api/role", verifyAdminHR, (req, res) => {
   Role.find()
     .populate("company")
@@ -1574,6 +1574,55 @@ app.put("/api/company/:id", verifyHR, (req, res) => {
 /////////////////////////////////
 /////////////////////Employee
 
+app.get('/api/employeeSalaryDepartment',verifyHR, (req, res) => {
+  Employee.find()
+    .populate('salary') // Populate the 'salary' field with the corresponding salary document
+    .then(employees => {
+      res.json(employees);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).json({ error: 'Internal server error' });
+    });
+});
+
+app.get('/department-salary', verifyHR, async (req, res) => {
+  try {
+    // Aggregate pipeline to calculate average salary by department
+    const pipeline = [
+      {
+        $lookup: {
+          from: 'salaries', // salary schema collection name
+          localField: 'salary', // reference field in employee schema
+          foreignField: '_id', // primary key in salary schema
+          as: 'salary', // output array field name
+        },
+      },
+      { $unwind: '$salary' },
+      {
+        $group: {
+          _id: '$department', // group by department
+          avgSalary: { $avg: '$salary.amount' }, // calculate average salary
+        },
+      },
+    ];
+
+    // Execute the pipeline on the Employee collection
+    const results = await Employee.aggregate(pipeline);
+
+    // Join department name with the results
+    for (let i = 0; i < results.length; i++) {
+      const department = await Department.findById(results[i]._id);
+      results[i].department = department.name;
+    }
+
+    res.json(results);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
 app.get("/api/employee", verifyHR, (req, res) => {
   // {path: 'projects', populate: {path: 'portals'}}
   Employee.find()
@@ -1755,7 +1804,7 @@ app.post("/api/salary/:id", verifyHR, (req, res) => {
                     console.log(err);
                     res.send("err");
                   } else {
-                    console.log(data);
+                    console.log("salary added to emp : ",data);
                     res.send(salary);
                   }
                 });

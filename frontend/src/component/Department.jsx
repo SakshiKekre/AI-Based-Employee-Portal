@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Department.css";
+
 import axios from "axios";
 import DepartmentTable from "./DepartmentTable.jsx";
 import DepartmentForm from "./DepartmentForm.jsx";

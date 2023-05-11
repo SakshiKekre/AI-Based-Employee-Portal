@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./PersonalInfoFormEdit.css";
+import "./LeaveApplicationEmpTable.css";
 import axios from "axios";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
@@ -73,7 +73,7 @@ class PersonalInfoFormEdit extends Component {
     this.setState({ DOBData: e.target.value });
   };
 
-  componentWillMount() {}   
+  componentWillMount() {}
   render() {
     return (
       <React.Fragment>
@@ -85,7 +85,7 @@ class PersonalInfoFormEdit extends Component {
               this.props.onPersonalInfoEditUpdate(this.props.editData, e)
             }
           >
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 First Name
               </Form.Label>
@@ -99,7 +99,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Middle Name
               </Form.Label>
@@ -113,7 +113,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Last Name
               </Form.Label>
@@ -128,7 +128,7 @@ class PersonalInfoFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label as="legend" column sm={2}>
                 Gender
               </Form.Label>
@@ -155,7 +155,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Contact No
               </Form.Label>
@@ -169,7 +169,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Emergency Contact No
               </Form.Label>
@@ -184,7 +184,7 @@ class PersonalInfoFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Email
               </Form.Label>
@@ -198,7 +198,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 SSN
               </Form.Label>
@@ -212,7 +212,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 DOB
               </Form.Label>
@@ -227,7 +227,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Blood Group
               </Form.Label>
@@ -285,7 +285,7 @@ class PersonalInfoFormEdit extends Component {
                   >
                     O-
                   </option>
-                  {/* 
+                  {/*
     A+
     A-
     B+
@@ -298,7 +298,7 @@ class PersonalInfoFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Hobbies
               </Form.Label>
@@ -313,7 +313,7 @@ class PersonalInfoFormEdit extends Component {
               </Col>
             </Form.Group>
 
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Present Address
               </Form.Label>
@@ -328,7 +328,7 @@ class PersonalInfoFormEdit extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
                 Permanet Address
               </Form.Label>

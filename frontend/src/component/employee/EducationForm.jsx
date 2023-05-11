@@ -17,7 +17,7 @@ class EducationForm extends Component {
  <div id="role-form-outer-div"><Form id="form" onSubmit={this.props.onEducationSubmit}>
   
 
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     School / University 
     </Form.Label>
@@ -25,7 +25,7 @@ class EducationForm extends Component {
       <Form.Control type="Text" placeholder="School / University " required/>
     </Col>
   </Form.Group>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     Degree 
     </Form.Label>
@@ -33,7 +33,7 @@ class EducationForm extends Component {
       <Form.Control type="Text" placeholder="Degree " required/>
     </Col>
   </Form.Group>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     Grade
     </Form.Label>
@@ -41,7 +41,7 @@ class EducationForm extends Component {
       <Form.Control type="Text" placeholder="Grade"  required/>
     </Col>
   </Form.Group>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     Passing Of Year
     </Form.Label>

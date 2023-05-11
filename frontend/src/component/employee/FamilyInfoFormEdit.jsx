@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./FamilyInfoFormEdit.css";
+import "./EducationForm.css";
 // import { Form,Button } from "react-bootstrap";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import axios from "axios";
@@ -41,7 +41,7 @@ class FamilyInfoForm extends Component {
               this.props.onFamilyInfoEditUpdate(this.props.editData, e)
             }
           >
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Name
               </Form.Label>
@@ -55,7 +55,7 @@ class FamilyInfoForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Relationship
               </Form.Label>
@@ -69,7 +69,7 @@ class FamilyInfoForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               DOB
               </Form.Label>
@@ -83,7 +83,7 @@ class FamilyInfoForm extends Component {
                 />
               </Col>
             </Form.Group>
-            <Form.Group as={Row}>
+            <Form.Group as={Row} className="form-group-spacer">
               <Form.Label column sm={2}>
               Occupation
               </Form.Label>

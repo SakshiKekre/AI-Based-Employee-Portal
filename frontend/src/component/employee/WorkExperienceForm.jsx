@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./WorkExperienceForm.css";
+import "./EducationForm.css";
 import { Form,Button,Col,Row } from "react-bootstrap";
 import axios from "axios";
 
@@ -17,7 +17,7 @@ class WorkExperienceForm extends Component {
  <div id="role-form-outer-div"><Form id="form" onSubmit={this.props.onWorkExperienceSubmit}>
   
 
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     Company Name
     </Form.Label>
@@ -25,7 +25,7 @@ class WorkExperienceForm extends Component {
       <Form.Control type="Text" placeholder="CompanyName" required/>
     </Col>
   </Form.Group>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     Designation
     </Form.Label>
@@ -33,7 +33,7 @@ class WorkExperienceForm extends Component {
       <Form.Control type="Text" placeholder="Designation" required/>
     </Col>
   </Form.Group>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     FromDate
     </Form.Label>
@@ -41,7 +41,7 @@ class WorkExperienceForm extends Component {
       <Form.Control type="date" required/>
     </Col>
   </Form.Group>
-  <Form.Group as={Row}>
+  <Form.Group as={Row} className="form-group-spacer">
     <Form.Label column sm={2}>
     ToDate
     </Form.Label>

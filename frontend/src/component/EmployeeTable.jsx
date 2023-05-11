@@ -6,7 +6,8 @@ import {
   faPlus,
   faTrash,
   faEdit,
-  faInfoCircle
+  faInfoCircle,
+  faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 import { RingLoader } from "react-spinners";
 import { css } from "@emotion/core";
@@ -111,9 +112,6 @@ class AdminEmployeeTable extends Component {
         width: 200,
         // filter: true ,
       },
-
-
-
       {
         headerName: "Date Of Joining",
         field: "DateOfJoining",
@@ -123,6 +121,13 @@ class AdminEmployeeTable extends Component {
         // filter: true ,
 
       },
+//       {
+//               headerName: "",
+//               field: "info",
+//               filter: false,
+//               width: 30,
+//               cellRendererFramework: this.handleEmailClick.bind(this),
+//             },
       {
         headerName: "",
         field: "info",
@@ -133,8 +138,6 @@ class AdminEmployeeTable extends Component {
         //   return <button OnClick={console.log("pa",params)}>Test</button>;
         // },
         cellRendererFramework: this.renderInfoButton.bind(this),
-
-
       },
       {
         headerName: "",
@@ -177,6 +180,8 @@ class AdminEmployeeTable extends Component {
   };
   employeeObj = [];
   rowDataT = [];
+
+
 
   loadEmployeeData = () => {
     axios
@@ -242,6 +247,19 @@ class AdminEmployeeTable extends Component {
   handleClick = (e) => {
     console.log(e);
   }
+//     handleEmailClick(param){
+//      console.log("param : ",param.data.Email);
+// //       window.location.href = param;
+//       return <FontAwesomeIcon
+//             icon={faEnvelope}
+//             onClick={() => this.onEmail(param.data.Email)}
+//           />;
+//     }
+//    onEmail(data){
+//    alert("in the mail mtd ", data);
+//       const mailtoLink = `mailto:${data}`;
+//       window.location.href = mailtoLink;
+//    }
   renderInfoButton(params) {
     console.log(params);
     return <div>
@@ -269,45 +287,6 @@ class AdminEmployeeTable extends Component {
     console.log(e.target.value);
     this.setState({ searchData: e.target.value });
   };
-  // getFilteredEmp() {
-  //   return this.employeeObj.filter(emp => {
-  //     return (
-  //       emp["Email"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["role"][0]["RoleName"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["FirstName"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["MiddleName"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["LastName"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["DOB"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["ContactNo"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["EmployeeCode"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["department"][0]["DepartmentName"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["position"][0]["PositionName"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase()) ||
-  //       emp["DateOfJoining"]
-  //         .toLowerCase()
-  //         .includes(this.state.searchData.toLocaleLowerCase())
-  //     );
-  //   });
-  // }
 
   render() {
     // let filteredEmp = this.getFilteredEmp();

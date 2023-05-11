@@ -43,7 +43,6 @@ class Salary extends Component {
               window.alert("The bank account number you entered does not match ")
         }
         else{
-
           console.log("id", event.target[0].value, event.target[1].value);
           this.setState({ table: true });
       
