@@ -1956,7 +1956,7 @@ app.put("/api/personal-info/:id", verifyEmployee, (req, res) => {
 
 ////////////////////////////////
 ////////////////////education
-app.get("/api/education/:id", verifyHREmployee, (req, res) => {
+app.get("/api/education/:id", (req, res) => {
   console.log(req.params.id);
   // var employee = {};
   // {path: 'projects', populate: {path: 'portals'}}
@@ -1981,8 +1981,8 @@ app.get("/api/education/:id", verifyHREmployee, (req, res) => {
     });
 });
 
-app.post("/api/education/:id", verifyEmployee, (req, res) => {
-  Joi.validate(req.body, EducationValidation, (err, result) => {
+app.post("/api/education/:id", (req, res) => {
+  Joi.validate(req.body, (err, result) => {
     if (err) {
       console.log(err);
       res.status(400).send(err.details[0].message);
@@ -2026,7 +2026,7 @@ app.post("/api/education/:id", verifyEmployee, (req, res) => {
   });
 });
 
-app.put("/api/education/:id", verifyEmployee, (req, res) => {
+app.put("/api/education/:id", (req, res) => {
   Joi.validate(req.body, EducationValidation, (err, result) => {
     if (err) {
       console.log(err);
