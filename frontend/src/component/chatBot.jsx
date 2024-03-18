@@ -35,7 +35,7 @@ class Chat extends Component {
         "max_tokens": 256
       },{
         headers: {
-          Authorization: 'Bearer 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',
+          Authorization: 'Bearer addkeyhere',
           'Content-Type': 'application/json'
         },
       })
